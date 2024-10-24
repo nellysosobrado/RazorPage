@@ -1,0 +1,10 @@
+﻿@page
+@model ProductsModel
+<h2>Available Products</h2>
+
+<ul>
+    @foreach (var product in Model.Products)
+    {
+        <li>@product.ProductId - @product.Name: @product.Price.ToString("C")</li>
+    }
+</ul>

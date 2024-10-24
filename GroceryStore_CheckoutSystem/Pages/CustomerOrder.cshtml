@@ -1,0 +1,42 @@
+﻿@page
+@model CustomerOrderModel
+<h2>Customer Order</h2>
+
+<h3>Select Products</h3>
+
+<form method="post">
+    <div>
+        <label>Product ID:</label>
+        <input asp-for="ProductId" />
+    </div>
+
+    <div>
+        <label>Quantity:</label>
+        <input asp-for="Quantity" type="number" min="1" />
+    </div>
+
+    <button type="submit" asp-page-handler="AddToCart">Add to Cart</button>
+</form>
+
+@if (Model.Cart != null && Model.Cart.Count > 0)
+{
+    <h3>Your Cart:</h3>
+    <ul>
+        @foreach (var item in Model.Cart)
+        {
+            <li>@item.Quantity x @item.Product.Name - @item.Product.Price.ToString("C")</li>
+        }
+    </ul>
+
+    <form method="post">
+        <button type="submit" asp-page-handler="GenerateReceipt">Generate Receipt</button>
+    </form>
+}
+
+<h3>Available Products</h3>
+<ul>
+    @foreach (var product in Model.AvailableProducts)
+    {
+        <li>ID: @product.ProductId - @product.Name - @product.Price.ToString("C")</li>
+    }
+</ul>

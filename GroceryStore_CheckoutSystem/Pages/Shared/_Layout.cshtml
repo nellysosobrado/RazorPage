@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - GroceryStore</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/Products">Products</a></li> <!-- Länk till produktsidan -->
+                <li><a href="/AddProduct">Add Product</a></li> <!-- Länk till sidan för att lägga till produkter -->
+                <li><a href="/CustomerOrder">New Customer</a></li> <!-- Länk till sidan för att lägga till produkter -->
+
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - GroceryStore</p>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+</html>

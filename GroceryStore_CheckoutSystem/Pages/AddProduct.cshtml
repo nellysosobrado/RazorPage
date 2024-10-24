@@ -1,0 +1,16 @@
+﻿@page
+@model AddProductModel
+<h2>Add a New Product</h2>
+
+<form method="post">
+    <label>Product ID:</label>
+    <input asp-for="NewProduct.ProductId" />
+
+    <label>Product Name:</label>
+    <input asp-for="NewProduct.Name" />
+
+    <label>Product Price:</label>
+    <input asp-for="NewProduct.Price" />
+
+    <button type="submit">Add Product</button>
+</form>
